@@ -4,7 +4,7 @@
  * Return k after placing the final result in the first k slots of nums.
  * Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
  */
-function removeDuplicates(nums: number[]): number {
+function removeDuplicatesMaxTwo(nums: number[]): number {
     if (nums.length === 0) {
         return 0;
     }
@@ -32,5 +32,5 @@ function removeDuplicates(nums: number[]): number {
     return total + currentCount; //last value in currentVal
 }
 
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); //[0,0,1,1,2,2,3,3,4] , 9
-console.log(removeDuplicates([])); //0
+console.log(removeDuplicatesMaxTwo([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); //[0,0,1,1,2,2,3,3,4] , 9
+console.log(removeDuplicatesMaxTwo([])); //0
