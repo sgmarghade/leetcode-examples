@@ -20,7 +20,7 @@ function removeDuplicates(nums: number[]): number {
             currentVal = nums[i];
             currentCount = 1;
         } else {
-            currentCount = 2;
+            currentCount = Math.min(currentCount + 1, 2);
         }
     }
     currentCount === 1 ? tempArr.push(currentVal) : tempArr.push(...[currentVal, currentVal]);
