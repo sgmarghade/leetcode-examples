@@ -1,7 +1,7 @@
 /*
 Given an integer x, return true if x is a palindrome, and false otherwise.
 * */
-function isPalindrome(x: number): boolean {
+function isPalindromeInt(x: number): boolean {
     if (x < 0) {
         return false;
     }
@@ -19,5 +19,5 @@ function isPalindrome(x: number): boolean {
     return true;
 }
 
-console.log(isPalindrome(121)); //true
-console.log(isPalindrome(124)); //false
+console.log(isPalindromeInt(121)); //true
+console.log(isPalindromeInt(124)); //false
