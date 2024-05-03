@@ -32,19 +32,20 @@ function lengthOfLastWord(s: string): number {
         }
     }
 
-    let endIndex = i;
+    let length: number = 0;
     while (i >= 0) {
         if (s[i] !== ' ') {
             i--;
+            length++;
         } else {
-            i++;
             break;
         }
     }
-
-    return endIndex - i + 1;
+    return length;
 }
 
 console.log(lengthOfLastWord('Hello World')); //5
 console.log(lengthOfLastWord('   fly me   to   the moon  ')); //4
-console.log(lengthOfLastWord('luffy is still joyboy')); //4
+console.log(lengthOfLastWord('luffy is still joyboy')); //6
+console.log(lengthOfLastWord('a')); //1
+console.log(lengthOfLastWord('ab')); //2
