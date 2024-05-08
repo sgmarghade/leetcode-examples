@@ -10,23 +10,24 @@
 class ListNode {
     val: number
     next: ListNode | null
+
     constructor(val?: number, next?: ListNode | null) {
-        this.val = (val===undefined ? 0 : val)
-        this.next = (next===undefined ? null : next)
+        this.val = (val === undefined ? 0 : val)
+        this.next = (next === undefined ? null : next)
     }
 }
 
-function reverseBetween(head: ListNode | null, left: number, right: number): ListNode | null {
+export function reverseBetween(head: ListNode | null, left: number, right: number): ListNode | null {
     let tmpNodePointer = head;
     let leftCounter = 1;
     const totalElements = right - left + 1;
 
-    while(leftCounter < left ) {
+    while (leftCounter < left) {
         tmpNodePointer = (tmpNodePointer as ListNode).next;
         leftCounter++;
     }
 
-    const arr: (ListNode | null)[]  = [];
+    const arr: (ListNode | null)[] = [];
 
     //Push elements from left to right to arr;
     for (let i = 1; i <= totalElements; i++) {
@@ -37,7 +38,7 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
     //Swap values of arr;
     let i = 0;
     let j = arr.length - 1;
-    while(i < j) {
+    while (i < j) {
         const leftNode = arr[i];
         const rightNode = arr[j];
         const tmp = (leftNode as ListNode).val;
