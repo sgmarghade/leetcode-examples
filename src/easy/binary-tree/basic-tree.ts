@@ -44,6 +44,31 @@ class BinarySearchTree {
         }
     }
 
+    //VLR
+    preorderTraversal(root: Node | null) {
+        if (root) {
+            console.log(root.value);
+            this.preorderTraversal(root.left);
+            this.preorderTraversal(root.right);
+        }
+    }
+    //LVR
+    inorderTraversal(root: Node | null) {
+        if (root) {
+            this.inorderTraversal(root.left);
+            console.log(root.value);
+            this.inorderTraversal(root.right);
+        }
+    }
+
+    //LRV
+    postorderTraversal(root: Node | null) {
+        if (root) {
+            this.postorderTraversal(root.left);
+            this.postorderTraversal(root.right);
+            console.log(root.value);
+        }
+    }
     private insertNode(root: Node, newNode: Node) {
         if (newNode.value <= root.value) {
             if (root.left === null) {
@@ -65,10 +90,18 @@ const tree = new BinarySearchTree();
 tree.insert(10);
 tree.insert(5);
 tree.insert(15);
-tree.insert(2);
-tree.insert(11);
+tree.insert(3);
+tree.insert(7);
 
-console.log(tree.search(tree.root, 2));
+console.log('********** Search *****************');
+console.log(tree.search(tree.root, 10));
 console.log(tree.search(tree.root, 20));
-console.log(tree.search(tree.root, 11));
 
+console.log('********** PreOrder *****************');
+tree.preorderTraversal(tree.root);
+
+console.log('********** InOrder *****************');
+tree.inorderTraversal(tree.root);
+
+console.log('********** PostOrder *****************');
+tree.postorderTraversal(tree.root);
