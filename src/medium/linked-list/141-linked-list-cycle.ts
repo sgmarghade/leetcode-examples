@@ -9,17 +9,8 @@
  * https://www.youtube.com/watch?v=RRSItF-Ts4Q
  */
 
-// class ListNode {
-//     val: number
-//     next: ListNode | null
-//
-//     constructor(val?: number, next?: ListNode | null) {
-//         this.val = (val === undefined ? 0 : val)
-//         this.next = (next === undefined ? null : next)
-//     }
-// }
-
-function hasCycle(head: ListNode | null): boolean {
+import {ListNode} from "../../linked-list-node";
+export function hasCycle(head: ListNode | null): boolean {
     let fast: ListNode | null = head;
     while (fast && fast.next) {
         fast = fast.next.next;
