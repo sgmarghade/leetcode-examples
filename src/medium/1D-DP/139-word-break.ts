@@ -27,6 +27,7 @@ function checkBruteforce1(startIndex: number, endIndex: number, inputString: str
 }
 
 //If last element is true means there is way to reach to the end.
+//Complexity n*m
 function checkBruteforce2(s: string, wordDict: string[]): boolean {
     const table = new Array(s.length + 1).fill(false);
     table[0] = true;
