@@ -21,8 +21,8 @@
  */
 
 function gameOfLife(board: number[][]): void {
-    let totalRows = board.length;
-    let totalCols = board[0].length;
+    const totalRows = board.length;
+    const totalCols = board[0].length;
     for(let row = 0; row < totalRows; row++) {
         for(let col = 0; col < totalCols; col++) {
             const totalLiveCellsAround = [];
